@@ -1,5 +1,8 @@
 package guru.springframework.msscbrewery.web.model;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,5 +19,8 @@ import java.util.UUID;
 @Builder
 public class CustomerDto {
     private UUID id;
+    @NotEmpty
+    @Min(3)
+    @Max(20)
     private String customerName;
 }
